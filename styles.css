@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+
+  --stone100: hsl(30, 54%, 90%);
+  --stone150: hsl(30, 18%, 87%);
+  --stone600: hsl(30, 10%, 34%);
+  --stone900: hsl(24, 5%, 18%);
+
+  --brown: hsl(14, 45%, 36%);
+
+  --rose800: hsl(332, 51%, 32%);
+  --rose50: hsl(330, 100%, 98%);
+}
+
+* {
+  font-family: "Outfit";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--stone600);
+  margin: 0px;
+  padding: 0px;
+}
+h1,
+h2 {
+  font-family: "Young Serif";
+  font-weight: 400;
+}
+h1 {
+  font-size: 36px;
+  color: var(--stone900);
+  margin: 0px 0px 12px;
+  line-height: 1;
+}
+h2 {
+  font-size: 28px;
+  color: var(--brown);
+  margin: 28px 0px 16px;
+}
+h3 {
+  font-size: 20px;
+  color: var(--rose800);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+strong {
+  font-weight: 700;
+}
+ul,
+ol {
+  padding: 0px 0px 0px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+li {
+  padding-left: 24px;
+}
+
+body {
+  background-color: var(--stone100);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 20px;
+  margin: 18.322% 0px;
+}
+img {
+  border-radius: 10px;
+  margin: 40px 40px 0px;
+}
+.content {
+  margin: 36px 40px 28px;
+}
+.prepare-section {
+  background-color: var(--rose50);
+  margin: 32px 0px 0px;
+  padding: 24px;
+  border-radius: 10px;
+}
+.pink-m::marker {
+  color: var(--rose800);
+}
+.brown-m::marker {
+  color: var(--brown);
+  font-weight: 700;
+}
+.section {
+  margin: 0px 0px 28px 0px;
+}
+.border {
+  border-bottom: 1px solid var(--stone150);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 8px 0px 0px 0px;
+}
+tr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+td {
+  text-align: left;
+  padding: 12px;
+}
+.indent {
+  margin: 0px 0px 0px 16px;
+}
+.number {
+  font-weight: 700;
+  color: var(--brown);
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 20px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  font-size: 11px;
+}
+
+@media screen and (min-width: 781px) {
+  .container {
+    width: 655px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 780px) {
+  .container {
+    width: clamp(375px, 7.1504rem + 69.3069vw, 655px);
+    margin: clamp(0px, -6.9802rem + 29.703vw, 120px);
+    /* border-radius: clamp(0px, -1.1634rem + 4.9505vw, 20px); */
+  }
+  img {
+    /* border-radius: clamp(0px, -0.5817rem + 2.4752vw, 10px); */
+    margin: clamp(0px, -2.3267rem + 9.901vw, 40px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 375px;
+    border-radius: 0px;
+    margin: 0px;
+  }
+  img {
+    border-radius: 0px;
+    margin: 0px;
+  }
+  .content {
+    margin: 36px 32px 28px;
+  }
+  h1 {
+    margin: 0px 0px 24px;
+  }
+  ul,
+  ol {
+    padding: 0px 0px 0px 24px;
+  }
+  li {
+    padding-left: 12px;
+  }
+  /* Center the ::marker */
+  /*
+  li.pink-m.center-m {
+    display: inline-flex; | make the original ::marker hidden
+    align-items: center;
+  }
+  li.pink-m.center-m::before {
+    content: "\2022"; | insert the dot icon
+    display: inline-block;
+    font-weight: bold; | styling the dot
+    font-size: 20px; | styling the dot
+    width: 1em;
+    margin-left: -1em;
+    vertical-align: middle; 
+    color: var(--rose800);
+  }
+  */
+}
