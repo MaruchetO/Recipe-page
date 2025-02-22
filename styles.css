@@ -75,7 +75,7 @@ body {
   flex-direction: column;
   background-color: var(--white);
   border-radius: 20px;
-  margin: 18.322% 0px;
+  margin: 18.322% 0px 0px;
 }
 img {
   border-radius: 10px;
