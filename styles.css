@@ -1,49 +1,99 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+@layer reset;
 
 :root {
   --white: hsl(0, 0%, 100%);
-
   --stone100: hsl(30, 54%, 90%);
   --stone150: hsl(30, 18%, 87%);
   --stone600: hsl(30, 10%, 34%);
   --stone900: hsl(24, 5%, 18%);
-
   --brown: hsl(14, 45%, 36%);
-
   --rose800: hsl(332, 51%, 32%);
   --rose50: hsl(330, 100%, 98%);
 }
 
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+@layer reset {
+  /* 1. Use a more-intuitive box-sizing model */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 5. Improve media defaults */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* 6. Inherit fonts for form controls */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* 7. Avoid text overflows */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+}
+
 * {
-  font-family: "Outfit";
+  font-family: "Outfit", san-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
   color: var(--stone600);
   margin: 0px;
   padding: 0px;
 }
-h1,
-h2 {
-  font-family: "Young Serif";
+
+.text-1,
+.text-2 {
+  font-family: "Young Serif", serif;
+  line-height: 1;
+  margin-block-end: 1.5rem;
+}
+.text-1 {
+  font-size: clamp(2.25rem, 2.162rem + 0.3756vw, 2.5rem);
+  color: var(--stone900);
+}
+.text-2 {
+  font-size: clamp(1.875rem, 1.875rem + 0vw, 1.875rem);
+  color: var(--brown);
+}
+.text-3,
+.text-4 {
   font-weight: 400;
 }
-h1 {
-  font-size: 36px;
-  color: var(--stone900);
-  margin: 0px 0px 12px;
-  line-height: 1;
-}
-h2 {
-  font-size: 28px;
-  color: var(--brown);
-  margin: 28px 0px 16px;
-}
-h3 {
-  font-size: 20px;
-  color: var(--rose800);
+.text-3 {
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  color: var(--rose800);
+  margin-block-end: 1rem;
 }
 strong {
   font-weight: 700;
@@ -73,21 +123,31 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  width: clamp(23.4375rem, 12.121rem + 37.6434vw, 46rem);
   background-color: var(--white);
-  border-radius: 20px;
-  margin: 18.322% 0px 0px;
+  border-radius: 1.25rem;
+  margin-block-start: clamp(0rem, -4.0125rem + 13.3472vw, 8rem);;
 }
 img {
-  border-radius: 10px;
-  margin: 40px 40px 0px;
+  border-radius: 0.625rem;
+  margin: clamp(0rem, -1.2539rem + 4.171vw, 2.5rem);
 }
-.content {
-  margin: 36px 40px 28px;
+header {
+  margin-inline: clamp(2rem, 1.7492rem + 0.8342vw, 2.5rem);
+  padding-block-end: 2rem;
 }
-.prepare-section {
+.section {
+  margin-inline: clamp(2rem, 1.7492rem + 0.8342vw, 2.5rem);
+  padding-block: 2rem;
+}
+.section + .section {
+  border-block-start: 1px solid var(--stone150);
+}
+
+.prep {
   background-color: var(--rose50);
-  margin: 32px 0px 0px;
-  padding: 24px;
+  padding: 1.5rem;
+  margin-inline: clamp(2rem, 1.7492rem + 0.8342vw, 2.5rem);
   border-radius: 10px;
 }
 .pink-m::marker {
@@ -97,12 +157,7 @@ img {
   color: var(--brown);
   font-weight: 700;
 }
-.section {
-  margin: 0px 0px 28px 0px;
-}
-.border {
-  border-bottom: 1px solid var(--stone150);
-}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -111,6 +166,9 @@ table {
 tr {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+tr + tr {
+  border-block-start: 1px solid var(--stone150);
 }
 td {
   text-align: left;
@@ -135,24 +193,6 @@ td {
   font-size: 11px;
 }
 
-@media screen and (min-width: 781px) {
-  .container {
-    width: 655px;
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 780px) {
-  .container {
-    width: clamp(375px, 7.1504rem + 69.3069vw, 655px);
-    margin: clamp(0px, -6.9802rem + 29.703vw, 120px);
-    /* border-radius: clamp(0px, -1.1634rem + 4.9505vw, 20px); */
-  }
-  img {
-    /* border-radius: clamp(0px, -0.5817rem + 2.4752vw, 10px); */
-    margin: clamp(0px, -2.3267rem + 9.901vw, 40px);
-  }
-}
-
 @media screen and (max-width: 480px) {
   .container {
     width: 375px;
@@ -161,14 +201,10 @@ td {
   }
   img {
     border-radius: 0px;
-    margin: 0px;
   }
-  .content {
-    margin: 36px 32px 28px;
-  }
-  h1 {
-    margin: 0px 0px 24px;
-  }
+  header {
+  padding-block: 2rem;
+}
   ul,
   ol {
     padding: 0px 0px 0px 24px;
