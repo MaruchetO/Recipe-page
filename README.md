@@ -78,3 +78,5 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 ## Acknowledgments
 
 I really appriciate this tool [Font-size Clamp Generator](https://clamp.font-size.app/). I use it for responsive font-size, and adapt it for image and div size.
+
+<!-- https://jsfiddle.net/2xzbqc8r/ -->
