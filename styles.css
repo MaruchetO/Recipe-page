@@ -67,23 +67,34 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--stone600);
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--stone100);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .text-1,
 .text-2 {
   font-family: "Young Serif", serif;
   line-height: 1;
-  margin-block-end: 1.5rem;
 }
 .text-1 {
   font-size: clamp(2.25rem, 2.162rem + 0.3756vw, 2.5rem);
   color: var(--stone900);
+  margin-block: 1.5rem;
 }
 .text-2 {
   font-size: clamp(1.875rem, 1.875rem + 0vw, 1.875rem);
   color: var(--brown);
+  margin-block-end: 1.5rem;
 }
 .text-3,
 .text-4 {
@@ -109,28 +120,18 @@ li {
   padding-left: 24px;
 }
 
-body {
-  background-color: var(--stone100);
-  min-height: 100vh;
-  display: grid;
-  place-content: center;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-}
-
 .container {
   display: flex;
   flex-direction: column;
   width: clamp(23.4375rem, 12.121rem + 37.6434vw, 46rem);
   background-color: var(--white);
   border-radius: 1.25rem;
-  margin-block-start: clamp(0rem, -4.0125rem + 13.3472vw, 8rem);;
+  margin-block: clamp(0rem, -4.0125rem + 13.3472vw, 8rem);
 }
 img {
   border-radius: 0.625rem;
-  margin: clamp(0rem, -1.2539rem + 4.171vw, 2.5rem);
+  margin: clamp(0rem, -1.2539rem + 4.171vw, 2.5rem)
+    clamp(0rem, -1.2539rem + 4.171vw, 2.5rem) 0;
 }
 header {
   margin-inline: clamp(2rem, 1.7492rem + 0.8342vw, 2.5rem);
@@ -186,25 +187,29 @@ td {
 .attribution {
   font-size: 11px;
   text-align: center;
-  padding: 20px;
+  position: absolute;
+  bottom: 10px;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
   font-size: 11px;
+  color: hsl(228, 45%, 44%);
 }
 
 @media screen and (max-width: 480px) {
   .container {
     width: 375px;
     border-radius: 0px;
-    margin: 0px;
+    margin: 0;
   }
   img {
     border-radius: 0px;
   }
-  header {
-  padding-block: 2rem;
+  .text-1 {
+  margin-block: 0 1.5rem;
 }
+  header {
+    padding-block: 2rem;
+  }
   ul,
   ol {
     padding: 0px 0px 0px 24px;
@@ -213,8 +218,8 @@ td {
     padding-left: 12px;
   }
   /* Center the ::marker */
-  /*
-  li.pink-m.center-m {
+  
+  /* li.pink-m.center-m {
     display: inline-flex; | make the original ::marker hidden
     align-items: center;
   }
@@ -227,6 +232,6 @@ td {
     margin-left: -1em;
     vertical-align: middle; 
     color: var(--rose800);
-  }
-  */
+  } */
+ 
 }
